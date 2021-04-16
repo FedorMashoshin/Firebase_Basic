@@ -24,7 +24,7 @@
 </ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success" (click)="save()" [disabled]="gag.title == ''">
+    <ion-fab-button color="success" (click)="save()" [disabled]="gag.title == '' || !capturedImage ">
       <ion-icon name="checkmark-done"></ion-icon>
     </ion-fab-button>
   </ion-fab>

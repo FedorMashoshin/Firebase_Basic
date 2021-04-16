@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { DataService, Gag } from 'src/app/services/data.service';
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const { Camera } = Plugins;
 
 @Component({
@@ -28,7 +29,7 @@ export class NewGagPage implements OnInit {
   ngOnInit() {
   }
 
-  async addImage(){
+  async addImage(): Promise<void>{
     const image = await Camera.getPhoto({
       quality: 100,
       allowEditing: true,
@@ -50,5 +51,4 @@ export class NewGagPage implements OnInit {
       this.router.navigateByUrl('/');
     });
   }
-
 }
