@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'new-gag',
     loadChildren: () => import('./pages/new-gag/new-gag.module').then( m => m.NewGagPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({
