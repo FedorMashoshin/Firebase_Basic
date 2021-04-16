@@ -1,9 +1,20 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>newGag</ion-title>
+  <ion-toolbar color="warning">
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add a new gag</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-item lines="full">
+    <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+    <ion-input [(ngModel)]="gag.title" placeholder="Add your gag here..."></ion-input>
+  </ion-item>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="save()" [disabled]="gag.title == ''">
+      <ion-icon name="checkmark-done"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
