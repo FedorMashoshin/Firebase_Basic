@@ -12,6 +12,17 @@
     <ion-icon name="add-circle-outline" slot="start"></ion-icon>
     <ion-input [(ngModel)]="gag.title" placeholder="Add your gag here..."></ion-input>
   </ion-item>
+
+<ion-card class="image__card" *ngIf="!capturedImage">
+  <h2 class="ion-text-center">Add your image</h2>
+  <div class="image__upload" (click)="addImage()" tappable>
+    <ion-icon name="camera-outline"></ion-icon>
+  </div>
+</ion-card>
+<ion-card *ngIf="capturedImage">
+  <img [src]="capturedImage" *ngIf="capturedImage">
+</ion-card>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success" (click)="save()" [disabled]="gag.title == ''">
       <ion-icon name="checkmark-done"></ion-icon>
